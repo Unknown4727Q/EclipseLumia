@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Anime Info Directory</title>
+  <style>
+    video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1; 
+      opacity: 0.7;
+    }
+
+    ;
+    .content {
+      position: relative;
+      z-index: 1; 
+      color: white;
+      text-align: center;
+      top: 40%;
+      font-size: 2rem;
+    }
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.03);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#071025);color:#e6eef8;line-height:1.4}
+    header{padding:28px 20px;display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px 80px}
+    h1{font-size:20px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 0;font-size:14px}
+    nav.genres{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+    nav.genres button{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:999px;color:var(--muted);cursor:pointer}
+    nav.genres button.active{background:linear-gradient(90deg,#11182711,var(--accent)22);border-color:rgba(124,58,237,0.25);color:#fff}
+    .genre-section{margin:28px 0}
+    .genre-section h2{margin:0 0 12px;font-size:18px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);overflow:hidden;display:flex;gap:10px}
+    .poster{flex:0 0 84px;height:120px;border-radius:8px;overflow:hidden;background:#061021}
+    .poster img{width:100%;height:100%;object-fit:cover;display:block}
+    .meta{flex:1;display:flex;flex-direction:column}
+    .title{font-weight:700;font-size:15px;margin:0}
+    .sub{font-size:13px;color:var(--muted);margin-top:6px}
+    .plot{font-size:13px;color:#cfe6ff;margin-top:8px;flex:1}
+    .links{display:flex;gap:8px;align-items:center;margin-top:10px}
+    .btn{padding:6px 10px;border-radius:8px;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#dff;display:inline-block}
+    .genre-tag{background:rgba(255,255,255,0.03);padding:4px 8px;border-radius:999px;font-size:12px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+    footer{padding:40px 20px;color:var(--muted);text-align:center}
+    @media (max-width:520px){
+      .poster{height:110px;width:76px}
+      header{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+    <video autoplay muted loop>
+    <source src="dragon.mp4" type="video/mp4">z
+    Your browser does not support HTML5 video.
+  </video>
+  <header>
+    <div class="logo">
+      <div class="mark">AN</div>
+      <div>
+        <h1>Anime Info Directory</h1>
+        <p class="lead">Genre-wise anime info with posters, short plots & Wikipedia links.</p>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <nav class="genres" aria-label="Genres">
+      <button class="active" data-genre="all">All</button>
+      <button data-genre="action">Action</button>
+      <button data-genre="fantasy">Fantasy</button>
+      <button data-genre="supernatural">Supernatural</button>
+      <button data-genre="shounen">Shounen</button>
+      <button data-genre="romance">Romance</button>
+      <button data-genre="ecchi">Ecchi</button>
+      <button data-genre="mystery">Mystery</button>
+    </nav>
+
+    <!-- ACTION / SHOUNEN -->
+    <section class="genre-section" data-genre="action">
+      <h2>Action & Shounen</h2>
+      <div class="grid">
+        <!-- 1 Naruto -->
+        <article class="card" data-genres="action,shounen">
+          <div class="poster"><img src="naruto.jpg" alt="Naruto poster"></div>
+          <div class="meta"><h3 class="title">Naruto</h3><div class="sub">Genre: Action, Adventure, Shounen</div>
+            <div class="plot">Naruto Uzumaki, an outcast orphan, trains to become a powerful ninja and dreams of being the Hokage while forming bonds with friends and rivals.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Naruto" target="_blank">Wikipedia</a><span class="genre-tag">Shounen</span></div>
+          </div>
+        </article>
+
+        <!-- 4 Bleach -->
+        <article class="card" data-genres="action,shounen">
+          <div class="poster"><img src="bleach...jpeg" alt="Bleach poster"></div>
+          <div class="meta"><h3 class="title">Bleach</h3><div class="sub">Genre: Action, Supernatural, Shounen</div>
+            <div class="plot">Ichigo Kurosaki gains Soul Reaper powers and battles hollows and corrupt spirits while uncovering the hidden politics of the Soul Society.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Bleach_(TV_series)" target="_blank">Wikipedia</a><span class="genre-tag">Shounen</span></div>
+          </div>
+        </article>
+
+        <!-- 5 Black Clover -->
+        <article class="card" data-genres="action,shounen">
+          <div class="poster"><img src="clover.jpg" alt="Black Clover poster"></div>
+          <div class="meta"><h3 class="title">Black Clover</h3><div class="sub">Genre: Fantasy, Action, Shounen</div>
+            <div class="plot">Asta, born without magic in a world of mages, and his rival Yuno strive to become the Wizard King through sheer will and growth.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Black_Clover" target="_blank">Wikipedia</a><span class="genre-tag">Shounen</span></div>
+          </div>
+        </article>
+
+        <!-- 6 The Seven Deadly Sins -->
+        <article class="card" data-genres="action,fantasy">
+          <div class="poster"><img src="deadly.jpg" alt="Seven Deadly Sins poster"></div>
+          <div class="meta"><h3 class="title">The Seven Deadly Sins</h3><div class="sub">Genre: Fantasy, Action, Adventure</div>
+            <div class="plot">A band of powerful knights called the Seven Deadly Sins reunite to clear their names and rescue a kingdom gripped by tyranny and dark magic.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/The_Seven_Deadly_Sins_(manga)" target="_blank">Wikipedia</a><span class="genre-tag">Fantasy</span></div>
+          </div>
+        </article>
+
+        <!-- 10 Demon Slayer -->
+        <article class="card" data-genres="action,supernatural">
+          <div class="poster"><img src="slayer.jpg" alt="Demon Slayer poster"></div>
+          <div class="meta"><h3 class="title">Demon Slayer: Kimetsu no Yaiba</h3><div class="sub">Genre: Action, Supernatural</div>
+            <div class="plot">After demons slaughter his family and transform his sister Nezuko, Tanjiro becomes a demon slayer to avenge them and find a cure.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba" target="_blank">Wikipedia</a><span class="genre-tag">Action</span></div>
+          </div>
+        </article>
+
+        <!-- 11 Jujutsu Kaisen -->
+        <article class="card" data-genres="action,supernatural">
+          <div class="poster"><img src="jujutsu.jpg" alt="Jujutsu Kaisen poster"></div>
+          <div class="meta"><h3 class="title">Jujutsu Kaisen</h3><div class="sub">Genre: Action, Supernatural</div>
+            <div class="plot">Yuji Itadori swallows a cursed object to protect friends and joins Jujutsu sorcerers to fight curses while hosting Sukuna within him.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Jujutsu_Kaisen" target="_blank">Wikipedia</a><span class="genre-tag">Supernatural</span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MYSTERY / DETECTIVE / ACTION -->
+    <section class="genre-section" data-genre="mystery">
+      <h2>Mystery / Supernatural</h2>
+      <div class="grid">
+        <!-- 2 Bungo Stray Dogs -->
+        <article class="card" data-genres="mystery,supernatural">
+          <div class="poster"><img src="bungo.jpg" alt="Bungo Stray Dogs poster"></div>
+          <div class="meta"><h3 class="title">Bungo Stray Dogs</h3><div class="sub">Genre: Mystery, Supernatural, Action</div>
+            <div class="plot">Atsushi Nakajima joins the Armed Detective Agency, a group of gifted individuals solving supernatural cases while battling rival organizations.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Bungo_Stray_Dogs" target="_blank">Wikipedia</a><span class="genre-tag">Mystery</span></div>
+          </div>
+        </article>
+
+        <!-- 15 Tokyo Ghoul -->
+        <article class="card" data-genres="supernatural,horror">
+          <div class="poster"><img src="ghoul.jpg" alt="Tokyo Ghoul poster"></div>
+          <div class="meta"><h3 class="title">Tokyo Ghoul</h3><div class="sub">Genre: Dark Fantasy, Horror</div>
+            <div class="plot">College student Ken Kaneki becomes half-ghoul after an organ transplant and struggles with identity, survival, and violent conflicts between humans and ghouls.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Tokyo_Ghoul" target="_blank">Wikipedia</a><span class="genre-tag">Dark Fantasy</span></div>
+          </div>
+        </article>
+
+        <!-- 16 Ajin -->
+        <article class="card" data-genres="mystery,thriller">
+          <div class="poster"><img src="ajin.jpg" alt="Ajin poster"></div>
+          <div class="meta"><h3 class="title">Ajin: Demi-Human</h3><div class="sub">Genre: Thriller, Sci-Fi</div>
+            <div class="plot">After surviving a fatal accident, Kei Nagai discovers he’s an immortal Ajin and becomes hunted by governments and other Ajin while navigating moral ambiguity.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Ajin:_Demi-Human" target="_blank">Wikipedia</a><span class="genre-tag">Thriller</span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FANTASY / ISEKAI -->
+    <section class="genre-section" data-genre="fantasy">
+      <h2>Fantasy / Isekai</h2>
+      <div class="grid">
+        <!-- 3 That Time I Got Reincarnated as a Slime -->
+        <article class="card" data-genres="fantasy,isekai">
+          <div class="poster"><img src="dragon.jpg" alt="Slime poster"></div>
+          <div class="meta"><h3 class="title">That Time I Got Reincarnated as a Slime</h3><div class="sub">Genre: Fantasy, Isekai</div>
+            <div class="plot">Reborn as the slime Rimuru Tempest, he builds a diverse nation, befriends monsters, and reshapes a fantasy world through diplomacy and power.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/That_Time_I_Got_Reincarnated_as_a_Slime" target="_blank">Wikipedia</a><span class="genre-tag">Isekai</span></div>
+          </div>
+        </article>
+
+        <!-- 12 Solo Leveling -->
+        <article class="card" data-genres="fantasy,action">
+          <div class="poster"><img src="solo.jpg" alt="Solo Leveling poster"></div>
+          <div class="meta"><h3 class="title">Solo Leveling</h3><div class="sub">Genre: Action, Fantasy</div>
+            <div class="plot">E-rank hunter Sung Jinwoo awakens a system that lets him level up indefinitely, transforming him from weakling to planet-class powerhouse.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Solo_Leveling" target="_blank">Wikipedia</a><span class="genre-tag">Action</span></div>
+          </div>
+        </article>
+
+        <!-- 17 The World's Finest Assassin Gets Reincarnated as an Aristocrat -->
+        <article class="card" data-genres="fantasy,isekai">
+          <div class="poster"><img src="finest.jpg" alt="World's Finest Assassin poster"></div>
+          <div class="meta"><h3 class="title">The World's Finest Assassin Gets Reincarnated as an Aristocrat</h3><div class="sub">Genre: Fantasy, Isekai</div>
+            <div class="plot">An elite assassin is reincarnated to prevent a catastrophic future by using his lethal skills and modern knowledge in a new world.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/The_World%27s_Finest_Assassin_Gets_Reincarnated_in_a_Different_World_as_an_Aristocrat" target="_blank">Wikipedia</a><span class="genre-tag">Isekai</span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ROMANCE -->
+    <section class="genre-section" data-genre="romance">
+      <h2>Romance / School</h2>
+      <div class="grid">
+        <!-- 18 Kaguya-sama -->
+        <article class="card" data-genres="romance,comedy">
+          <div class="poster"><img src="kaguya.jpg" alt="Kaguya-sama poster"></div>
+          <div class="meta"><h3 class="title">Kaguya-sama: Love is War</h3><div class="sub">Genre: Romance, Comedy</div>
+            <div class="plot">Student council leaders Kaguya and Miyuki wage hilarious psychological battles to force the other into confessing love first.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Kaguya-sama:_Love_Is_War" target="_blank">Wikipedia</a><span class="genre-tag">Romance</span></div>
+          </div>
+        </article>
+
+        <!-- 19 Shuffle -->
+        <article class="card" data-genres="romance,ecchi">
+          <div class="poster"><img src="shuffle.jpg" alt="Shuffle poster"></div>
+          <div class="meta"><h3 class="title">Shuffle!</h3><div class="sub">Genre: Romance, Harem</div>
+            <div class="plot">Rin is pulled into a romantic tangle involving humans, gods, and demons, with choices that could change multiple worlds.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Shuffle!" target="_blank">Wikipedia</a><span class="genre-tag">Harem</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ECCHI / COMEDY -->
+    <section class="genre-section" data-genre="ecchi">
+      <h2>Ecchi / Comedy</h2>
+      <div class="grid">
+        <!-- 14 Maburaho -->
+        <article class="card" data-genres="comedy,ecchi">
+          <div class="poster"><img src="maburaho.jpg" alt="Maburaho poster"></div>
+          <div class="meta"><h3 class="title">Maburaho</h3><div class="sub">Genre: Comedy, Harem</div>
+            <div class="plot">Kazuki's rare magic genes unintentionally draw attention from multiple girls; comedy and romance ensue as secrets unravel.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Maburaho" target="_blank">Wikipedia</a><span class="genre-tag">Comedy</span></div>
+          </div>
+        </article>
+
+        <!-- 20 High School DxD -->
+        <article class="card" data-genres="ecchi,action">
+          <div class="poster"><img src="DxD.jpg" alt="High School DxD poster"></div>
+          <div class="meta"><h3 class="title">High School DxD</h3><div class="sub">Genre: Ecchi, Supernatural, Action</div>
+            <div class="plot">Issei is resurrected by demon Rias Gremory and pulled into battles between angels, devils, and other supernatural factions while navigating harem antics.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/High_School_DxD" target="_blank">Wikipedia</a><span class="genre-tag">Ecchi</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- THRILLER / MODERN FANTASY -->
+    <section class="genre-section" data-genre="supernatural">
+      <h2>Supernatural / Thriller</h2>
+      <div class="grid">
+        <!-- 13 Dance in the Vampire Bund -->
+        <article class="card" data-genres="supernatural,political">
+          <div class="poster"><img src="bund.jpg" alt="Dance in the Vampire Bund poster"></div>
+          <div class="meta"><h3 class="title">Dance in the Vampire Bund</h3><div class="sub">Genre: Supernatural, Political Drama</div>
+            <div class="plot">Vampire Queen Mina Tepes seeks refuge and a homeland for vampires in Japan, igniting political and social tensions between species.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Dance_in_the_Vampire_Bund" target="_blank">Wikipedia</a><span class="genre-tag">Supernatural</span></div>
+          </div>
+        </article>
+
+        <!-- 7 Dragon Raja -->
+        <article class="card" data-genres="sci-fi,fantasy">
+          <div class="poster"><img src="raja.jpg" alt="Dragon Raja poster"></div>
+          <div class="meta"><h3 class="title">Dragon Raja</h3><div class="sub">Genre: Fantasy, Sci-Fi</div>
+            <div class="plot">In a near-future world, those with Dragon genes face ancient threats and modern conflicts while uncovering hidden legacies tied to dragons.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Dragon_Raja_(video_game)" target="_blank">Wikipedia</a><span class="genre-tag">Sci‑Fi</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TIME-TRAVEL / GANGS -->
+    <section class="genre-section" data-genre="time-travel">
+      <h2>Time-Travel / Delinquent Drama</h2>
+      <div class="grid">
+        <!-- 8/9 Tokyo Revengers -->
+        <article class="card" data-genres="action,drama">
+          <div class="poster"><img src="revengers.jpg" alt="Tokyo Revengers poster"></div>
+          <div class="meta"><h3 class="title">Tokyo Revengers</h3><div class="sub">Genre: Time-Travel, Action, Drama</div>
+            <div class="plot">Takemichi Hanagaki travels back to his middle school days to stop tragedies involving his ex-girlfriend and the violent Tokyo Manji Gang.</div>
+            <div class="links"><a class="btn" href="https://en.wikipedia.org/wiki/Tokyo_Revengers" target="_blank">Wikipedia</a><span class="genre-tag">Time-Travel</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+  <footer>© 2025 Anime Info Directory — Updated with your 20 titles. You can edit posters, plots, or links directly in this file.</footer>
+
+  <script>
+    // genre filter
+    const buttons = document.querySelectorAll('nav.genres button');
+    const sections = document.querySelectorAll('.genre-section');
+    buttons.forEach(btn=>btn.addEventListener('click',()=>{
+      buttons.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const g = btn.dataset.genre;
+      if(g==='all'){
+        sections.forEach(s=>s.style.display='block');
+      } else {
+        sections.forEach(s=>{
+          // show section if its data-genre contains the selected genre OR if any article inside has matching genre tag
+          if(s.dataset.genre===g){
+            s.style.display='block';
+            return;
+          }
+          // fallback: check articles inside for matching genre tags in their data-genres
+          const articles = s.querySelectorAll('article');
+          let found = false;
+          articles.forEach(a=>{
+            const dg = a.dataset.genres || '';
+            if(dg.split(',').map(x=>x.trim()).includes(g)) found = true;
+          });
+          s.style.display = found ? 'block' : 'none';
+        })
+      }
+    }));
+  </script>
+</body>
+</html>
