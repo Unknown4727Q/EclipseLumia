@@ -1,0 +1,35 @@
+  	css is used to style html elements inside a web page.
+three methods to use css: 
+   	1.inline css: use style attribute to html elements to add css.
+	2.internal: use style tag inside the head section of the html document and use appropriate selectors.
+	3.external css: save the css code in a separate document with the extension .css and link it to the html document using the link tag.
+A function is a block of code which is written to perform one perticuler task. the function concept is not limited to any perticuler programming language but is used across languages in programming. 
+h1     {colo:blue; font-size:12px;}
+Sele    Prop value 
+
+
+// for javascript
+and <!---- for html
+id can ot start with a number
+
+*****head and header tag*****
+>HEAD:holds meta deta not visible to the user                       >Header:visible in content section
+  -placement:before body													inside body tag
+  -occurences:only once                                                     can be used multiple times
+  
+
+  *******dif and span********
+><dif>:                                                             ><span>
+ -type:block level															inline
+ -usage:large sections														samll sections or parts of a line
+ 
+
+ line height property is space between the line not the height between the lines
+ 
+ which css code fragement centers an image horizontally
+ ->image.centre {display:block; margin-left:auto;margin-right:auto;}
+
+ which css position property value removes an element from the normal document flow and posiion it relative to its nearest positioned ancester?
+ -> absolute 
+
+ 
